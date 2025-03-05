@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="io.github.palexdev.materialfx.demo.controllers.OrdersController"
+            styleClass="rootPane" stylesheets="@../css/Demo.css">
+
+    <!-- Main Content -->
+    <VBox spacing="10" styleClass="main-container" stylesheets="@../css/Orders.css"
+          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+        <!-- Title -->
+        <Label text="Your Orders" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+        <!-- Scrollable Orders Table -->
+        <MFXScrollPane fitToWidth="true" hbarPolicy="NEVER">
+            <VBox>
+                <TableView fx:id="ordersTable">
+                    <columns>
+                        <TableColumn text="Order ID" prefWidth="100">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="orderId"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Product ID" prefWidth="100">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="productId"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Quantity" prefWidth="100">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="quantity"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Total Price" prefWidth="100">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="total"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Status" prefWidth="100">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="status"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+            </VBox>
+        </MFXScrollPane>
+
+        <!-- Action Button -->
+        <MFXButton text="Delete" onAction="#deleteOrder" styleClass="action-button" alignment="CENTER" maxWidth="200"/>
+    </VBox>
+</AnchorPane>

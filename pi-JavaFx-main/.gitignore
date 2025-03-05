@@ -12,3 +12,6 @@ out/
 # Others
 demo/scenicView.properties
 scenicView.properties
+
+# Ignore Gradle build output directory
+build

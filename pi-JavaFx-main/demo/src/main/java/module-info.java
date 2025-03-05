@@ -14,6 +14,10 @@ module MaterialFX.Demo {
 	requires org.kordamp.ikonli.fontawesome5;
 	requires org.scenicview.scenicview;
     requires java.sql;
+    requires kernel;
+    requires layout;
+    requires io;
+
 
     opens io.github.palexdev.materialfx.demo;
 	opens io.github.palexdev.materialfx.demo.controllers;
